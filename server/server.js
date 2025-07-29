@@ -21,6 +21,9 @@ const applyRouter = require("./routes/apply.routes");
 app.use("/api", authRouter);
 app.use("/api", jobRouter);
 app.use("/api", applyRouter);
+app.get("/", (req, res) => {
+  return res.status(200).send("ok server");
+});
 app.listen(PORT, () => {
   console.log("server listening on port : ", PORT);
 });
