@@ -29,8 +29,8 @@ A RESTful API for managing job listings, built with Node.js, Express, and MongoD
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/job-listing-api.git
-   cd job-listing-api
+   git clone https://github.com/Solo-Player-Kirito/job-portal-server.git
+   cd job-portal-server/server
    npm install
    node server.js
    ```
