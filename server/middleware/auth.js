@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-
+const jwt_secret = "I_am_full_a_stack_developer";
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
 
@@ -11,7 +11,7 @@ const authenticateToken = (req, res, next) => {
       .json({ message: "Access denied. No token provided." });
   }
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+  jwt.verify(token, jwt_secret, (err, user) => {
     if (err) {
       return res.status(403).json({ message: "Invalid token." });
     }

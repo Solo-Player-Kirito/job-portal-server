@@ -6,7 +6,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const PORT = process.env.PORT || 3001;
-const DB = process.env.MONGO_URI;
+// const DB = process.env.MONGO_URI;
+const DB =
+  "mongodb+srv://sonu:sonu123@cluster0.vb1roxq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 mongoose
   .connect(DB)
   .then(() => {

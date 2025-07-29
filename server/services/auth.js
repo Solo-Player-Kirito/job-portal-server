@@ -1,6 +1,7 @@
 const { userModel } = require("../models/auth");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const jwt_secret = "I_am_full_a_stack_developer";
 
 async function register({ name, email, phone, password, type }) {
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -14,7 +15,7 @@ async function register({ name, email, phone, password, type }) {
   });
   const token = jwt.sign(
     { id: user._id, type: user.type, name: user.name },
-    process.env.JWT_SECRET,
+    jwt_secret,
     { expiresIn: "3d" }
   );
 
@@ -35,7 +36,7 @@ async function login({ phone, password, type }) {
   // Generate JWT token
   const token = jwt.sign(
     { id: user._id, type: user.type, name: user.name },
-    process.env.JWT_SECRET,
+    jwt_secret,
     { expiresIn: "3d" }
   );
 
