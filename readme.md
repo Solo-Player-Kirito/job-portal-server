@@ -34,4 +34,3 @@ A RESTful API for managing job listings, built with Node.js, Express, and MongoD
    npm install
    node server.js
    ```
-
