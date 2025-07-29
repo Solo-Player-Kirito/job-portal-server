@@ -1,0 +1,19 @@
+FROM node:20-alpine
+
+# Install pnpm globally
+# RUN npm install -g pnpm
+
+WORKDIR /app
+
+# Use pnpm to install dependencies
+COPY package-lock.json ./
+COPY package.json ./
+RUN pnpm install
+
+COPY . .
+
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]
+
