@@ -1,12 +1,12 @@
 FROM node:20-alpine
 
 # Install pnpm globally
-# RUN npm install -g pnpm
+RUN npm install -g pnpm
 
 WORKDIR /app
 
 # Use pnpm to install dependencies
-COPY package-lock.json ./
+COPY pnpm-lock.yaml ./
 COPY package.json ./
 RUN pnpm install
 
